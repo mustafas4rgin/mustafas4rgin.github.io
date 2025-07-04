@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎁 Sana En Büyük Sürprizim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #ffeaf4, #f9f0ff);
+      overflow-x: hidden;
+      position: relative;
+      color: #aa007a;
+    }
+
+    header {
+      background: url('banner.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .heart-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      color: #ff69b4;
+      animation: fall 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+
+    /* SLIDER */
+    .slider-container {
+      position: relative;
+      max-width: 700px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .slider img {
+      width: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 20px;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #d63384;
+      border: none;
+      font-size: 2em;
+      padding: 5px 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .nav:hover {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .prev { left: 15px; }
+    .next { right: 15px; }
+
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #ccc;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #d63384;
+    }
+
+    .music-player {
+      margin-top: 30px;
+    }
+
+    .music-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 25px;
+      background-color: #d63384;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .music-link:hover {
+      background-color: #a81c63;
+    }
+
+    .gift {
+      margin: 50px auto;
+      padding: 30px;
+      max-width: 700px;
+      background: #fff0f7;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .gift img {
+      width: 200px;
+      transition: transform 0.5s ease;
+    }
+
+    .gift:hover img {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    .closing {
+      font-size: 1.5em;
+      margin-top: 60px;
+      animation: revealText 3s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes revealText {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      font-style: italic;
+      color: #a60055;
+      background-color: #fff;
+    }
+
+    footer a {
+      background-color: #d63384;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      background-color: #8f1b4f;
+    }
+  </style>
+</head>
+<body>
+
+<div class="heart-rain" id="heart-container"></div>
+
+<header>
+  <h1>🎉 Sürpriz Zamanı Aşkım 🎉</h1>
+</header>
+
+<section class="music-player">
+  <h2>🎶 ÖNCE ŞARKIMIZI AÇALIM BİTANEM 🎶</h2>
+  <audio controls autoplay>
+    <source src="../sarkimiz.mp3" type="audio/mpeg" />
+    Tarayıcınız ses dosyasını desteklemiyor.
+  </audio>
+  <p><a href="https://open.spotify.com/track/3M3H2dZuQn5rNcZ8nQKvMU" target="_blank" class="music-link">Spotify’da Aç 🎧</a></p>
+</section>
+
+<section>
+  <p style="font-size: 1.2em;">
+    Aşkım... Tam 40 sayfa boyunca bu kitaptan geçtin...  
+    Her kelime, her harf sadece sana olan sevgim içindi.  
+    Şimdi bu final sayfada, sana hem dijital hem gerçek bir sürpriz bırakıyorum...  
+    <strong>Çünkü sen her şeyin en güzeline layıksın. ❤️</strong>
+  </p>
+</section>
+
+<section id="photos">
+  <h2>📸 Fotoğraflarımız</h2>
+  <div class="slider-container">
+    <div class="slider" id="slider">
+      <img src="../images/1.jpeg" alt="Anı 1" />
+      <img src="../images/2.jpeg" alt="Anı 1" />
+      <img src="../images/3.jpeg" alt="Anı 1" />
+      <img src="../images/5.jpeg" alt="Anı 1" />
+      <img src="../images/6.jpeg" alt="Anı 1" />
+      <img src="../images/7.png" alt="Anı 1" />
+      <img src="../images/8.png" alt="Anı 1" />
+      <img src="../images/9.png" alt="Anı 1" />
+      <img src="../images/10.png" alt="Anı 1" />
+      <img src="../images/11.png" alt="Anı 1" />
+      <img src="../images/12.png" alt="Anı 1" />
+      <img src="../images/13.png" alt="Anı 1" />
+      <img src="../images/14.png" alt="Anı 1" />
+      <img src="../images/15.png" alt="Anı 1" />
+      <img src="../images/16.png" alt="Anı 1" />
+      <img src="../images/17.png" alt="Anı 1" />
+    </div>
+    <button class="nav prev" onclick="prevSlide()">‹</button>
+    <button class="nav next" onclick="nextSlide()">›</button>
+  </div>
+  <div class="dots" id="dots"></div>
+</section>
+
+<section class="gift">
+  <h2>🎁 Hediye Zamanı 🎁</h2>
+  <img src="../images/18.png" alt="Hediyen" />
+  <p style="font-size: 1.1em; margin-top: 20px;">
+    Bir de ufak bir hediyem daha var. 
+    Sana gönderdiğim kargoda bir zil vardı aşkım. sana özel hazırlandı.
+    Onun tepesi açılıyor. Bi içine bak istersen :)  
+    Her alışverişinde seni düşünen birini hatırla…  
+    <strong>Sonsuz sevgimle... 💖</strong>
+  </p>
+</section>
+
+<section class="closing">
+  ❤️ Seni Sonsuz Seviyorum... Ve Bu Sadece Başlangıç... ❤️
+</section>
+
+<footer>
+  <p>Her sayfa, her satır seni gülümsetsin diye yazıldı...  
+  Sonsuza kadar birlikte olmak dileğiyle... 💞</p>
+  <a href="../index.html">🏠 Ana Sayfaya Dön</a>
+</footer>
+
+<!-- KALP YAĞMURU + SLIDER JS -->
+<script>
+  // Kalp yağmuru
+  const container = document.getElementById('heart-container');
+  const hearts = ['💖','💘','💝','💕','💗','❤️'];
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+    heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+    container.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 300);
+
+  // Slider
+  const slider = document.getElementById("slider");
+  const slides = slider.querySelectorAll("img");
+  const dotsContainer = document.getElementById("dots");
+  let index = 0;
+
+  function createDots() {
+    for (let i = 0; i < slides.length; i++) {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => showSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  function showSlide(i) {
+    index = (i + slides.length) % slides.length;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+    updateDots();
+  }
+
+  function nextSlide() {
+    showSlide(index + 1);
+  }
+
+  function prevSlide() {
+    showSlide(index - 1);
+  }
+
+  setInterval(nextSlide, 4000);
+  createDots();
+</script>
+
+</body>
+</html>

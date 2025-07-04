@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simoşum Aşk Testi ❤️</title>
+    <style>
+        body {
+            background-color: #fff0f5;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #d63384;
+        }
+        button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .result {
+            display: none;
+            background-color: #ffe6f0;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        .question {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>💌 Simoşum Aşk Testi 💌</h2>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Benim en sevdiğim mevsim hangisi?</p>
+                <input type="radio" name="q1" value="Kış"> Kış<br>
+                <input type="radio" name="q1" value="Yaz"> Yaz<br>
+                <input type="radio" name="q1" value="İlkbahar"> İlkbahar<br>
+                <input type="radio" name="q1" value="Sonbahar"> Sonbahar<br>
+            </div>
+            <div class="question">
+                <p>2. Sana en çok hangi kelimeyle hitap ediyorum?</p>
+                <input type="radio" name="q2" value="Karım"> Karım<br>
+                <input type="radio" name="q2" value="Bitanem"> Bitanem<br>
+                <input type="radio" name="q2" value="Aşkım"> Aşkım<br>
+                <input type="radio" name="q2" value="Simoşum"> Simoşum<br>
+            </div>
+            <div class="question">
+                <p>3. İlk buluşmamızda giydiğim renk?</p>
+                <input type="radio" name="q3" value="Siyah"> Siyah<br>
+                <input type="radio" name="q3" value="Beyaz"> Beyaz<br>
+                <input type="radio" name="q3" value="Mavi"> Mavi<br>
+                <input type="radio" name="q3" value="Kırmızı"> Kırmızı<br>
+            </div>
+            <button type="button" onclick="checkAnswers()">Cevapladım ❤️</button>
+        </form>
+
+        <div class="result" id="result">
+            <h3>🎉 Bravo Aşkım! 🎉</h3>
+            <p>Bu soruları doğru cevapladığın için yeni harfin: <strong>L</strong></p>
+            <p>Sakla! Yakında lazım olacak 😏</p>
+            <p>Şimdi sayfa 12'ye geç sevgilim</p>
+            <a href="../index.html" style="display:inline-block; margin-top:30px; padding:12px 25px; background-color:#d63384; color:white; text-decoration:none; border-radius:10px; transition:0.3s;">🏠 Ana Sayfaya Dön</a>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (!q1 || !q2 || !q3) {
+                alert("Tüm soruları cevapla aşkım ❤️");
+                return;
+            }
+
+            if (q1.value === "Kış" && q2.value === "Karım" && q3.value === "Siyah") {
+                document.getElementById("result").style.display = "block";
+            } else {
+                alert("Bir veya birkaç cevap yanlış aşkım 😔 Tekrar dene!");
+            }
+        }
+    </script>
+</body>
+</html>

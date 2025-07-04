@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aşk Anketi 💌</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #ffe6f0, #fce8ff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            color: #d63384;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b0256d;
+            transform: scale(1.05);
+        }
+
+        .result {
+            display: none;
+            background-color: #ffe6f0;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .hearts {
+            margin-top: 30px;
+            animation: float 3s ease-in-out infinite;
+            font-size: 30px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #b0256d;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💌 Minik Aşk Anketimiz 💌</h1>
+    <form id="quizForm">
+        <div class="question">
+            <p>1) Beni düşündüğünde ilk aklına gelen renk?</p>
+            <input type="radio" name="q1"> Pembe <br>
+            <input type="radio" name="q1"> Siyah <br>
+            <input type="radio" name="q1"> Mavi <br>
+            <input type="radio" name="q1"> Mor <br>
+        </div>
+
+        <div class="question">
+            <p>2) Bizim en güzel anımız sence nerede geçti?</p>
+            <input type="radio" name="q2"> MC Arancia Tatili 🌊 <br>
+            <input type="radio" name="q2"> İlk buluşma 💕 <br>
+            <input type="radio" name="q2"> Telefon konuşmalarımız 📞 <br>
+            <input type="radio" name="q2"> Hepsi 😍 <br>
+        </div>
+
+        <div class="question">
+            <p>3) Trip attığında genelde ne yaparım?</p>
+            <input type="radio" name="q3"> Susarım 😅 <br>
+            <input type="radio" name="q3"> Gönlünü almaya çalışırım 😍 <br>
+            <input type="radio" name="q3"> Beni sinirlendirirsin 😂 <br>
+            <input type="radio" name="q3"> Tatlı cümleler kurarım 😏 <br>
+        </div>
+
+        <div class="question">
+            <p>4) Şu an sana ne söylemek isterim?</p>
+            <input type="radio" name="q4"> Seni çok seviyorum ❤️ <br>
+            <input type="radio" name="q4"> Seni çok özledim 😢 <br>
+            <input type="radio" name="q4"> Hemen gelsin artık 😄 <br>
+            <input type="radio" name="q4"> Hepsi 😍 <br>
+        </div>
+
+        <button type="button" onclick="showResult()">Cevapladım ❤️</button>
+    </form>
+
+    <div class="result" id="result">
+        <h2>🎉 Tebrikler Aşkım! 🎉</h2>
+        <p>Anketi bitirdiğin için yeni harfin: <strong>B</strong></p>
+        <p>Sakla! Çok yakında final şifre görevinde lazım olacak 😘</p>
+        <div class="hearts">❤️ ❤️ ❤️ ❤️ ❤️</div>
+    </div>
+
+     <a href="../index.html" style="display:inline-block; margin-top:30px; padding:12px 25px; background-color:#d63384; color:white; text-decoration:none; border-radius:10px; transition:0.3s;">🏠 Ana Sayfaya Dön</a>
+
+    <script>
+        function showResult() {
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Harf Görevin 💛</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #ffe6f0, #fce8ff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            color: #d63384;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        button {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b0256d;
+            transform: scale(1.05);
+        }
+
+        .result {
+            display: none;
+            background-color: #ffe6f0;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .hearts {
+            margin-top: 30px;
+            animation: float 3s ease-in-out infinite;
+            font-size: 30px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #d63384;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #b0256d;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎯 İkinci Mini Görev 🎯</h1>
+
+    <p>Aşkım... Şimdi bakalım ne kadar iyi hatırlıyorsun 😏</p>
+
+    <div class="question">
+        <p><strong>Soru:</strong> MC Arancia tatilimizde en çok neyi beğenmiştik?</p>
+        <input type="radio" name="q1" value="Yemekler"> Yemekler 🍔<br>
+        <input type="radio" name="q1" value="Türk Gecesi"> Türk Gecesi 🍽️ <br>
+        <input type="radio" name="q1" value="Otel Odası"> Otel Odası 🏨<br>
+        <input type="radio" name="q1" value="Yolculuk"> Yolculuk 🚗<br>
+    </div>
+
+    <button onclick="checkAnswer()">Cevabımı Gönder ❤️</button>
+
+    <div class="result" id="result">
+        <h2>🎉 Doğru Cevap! 🎉</h2>
+        <p>Yeni Harfin: <strong>İ</strong> 💛</p>
+        <p>Sakla aşkım! Finalde ihtiyacın olacak 😍</p>
+        <div class="hearts">❤️ ❤️ ❤️ ❤️ ❤️</div>
+        <a href="../index.html">🏠 Ana Sayfaya Dön</a>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.querySelector('input[name="q1"]:checked');
+            if (!answer) {
+                alert("Aşkım 😘 Lütfen bir seçenek işaretle!");
+                return;
+            }
+
+            if (answer.value === "Türk Gecesi") {
+                document.getElementById("result").style.display = "block";
+            } else {
+                alert("Aşkım 😔 Yanlış cevap... İpucu: O gün yemekler ilk defa güzeldi 😏");
+            }
+        }
+    </script>
+
+</body>
+</html>

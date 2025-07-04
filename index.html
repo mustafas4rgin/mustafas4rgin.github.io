@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simoşumun Aşk Oyunu 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #ffe6f0, #fce8ff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 60px 20px;
+            color: #d63384;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        input, button {
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            width: 70%;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #d63384;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #b0256d;
+            transform: scale(1.05);
+        }
+
+        .hearts {
+            margin-top: 30px;
+            animation: float 3s ease-in-out infinite;
+            font-size: 30px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💌 Simoşumun Gizli Aşk Oyunu Başlıyor 💌</h1>
+    <p>Kitaptan verilen şifreyi buraya yaz aşkım...  
+    <br>(Hadi bakalım doğru şifreyi biliyor musun? 😏)</p>
+
+    <input type="text" id="password" placeholder="Şifreyi buraya yaz...">
+    <br>
+    <button onclick="checkPassword()">Gönder ❤️</button>
+
+    <div class="hearts">❤️ ❤️ ❤️ ❤️ ❤️</div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value.trim().toLowerCase();
+            if (password === "") {
+                alert("Aşkım şifreyi boş bırakma lütfen! 😘");
+                return;
+            }
+            if (password === "kalbe giden yol" || password === "kalbegidenyol") {
+                window.location.href = "/pages/final.html";
+            } else
+            if (password === "ney" || password === "ney") {
+                window.location.href = "/pages/gorev8.html";
+            } else
+            if (password === "simsim" || password === "simsim") {
+                window.location.href = "/pages/gorev7.html";
+            } else
+            if (password === "hayalimiz" || password === "hayalimiz") {
+                window.location.href = "/pages/gorev6.html";
+            } else
+            if (password === "hatıram" || password === "hatiram") {
+                window.location.href = "/pages/gorev5.html";
+            } else
+            if (password === "özledim" || password === "ozledim") {
+                window.location.href = "/pages/gorev4.html";
+            } else
+            if (password === "birlikte" || password === "birlikte") {
+                window.location.href = "/pages/gorev3.html";
+            } else
+            if (password === "seniseviyorum" || password === "seniseviyorum") {
+                window.location.href = "/pages/gorev2.html";
+            } else
+            if (password === "yirmiüç" || password === "yirmiuc") {
+                window.location.href = "/pages/yirmiuc.html";
+            } else
+            if (password === "sevgi" || password === "sevgi") {
+                window.location.href = "/pages/gorev1.html";
+            } else
+            if (password === "anket" || password === "anket") {
+                window.location.href = "/pages/anket.html";
+            } else
+            if (password === "hediye" || password === "hediye") {
+                window.location.href = "/pages/harfgorevi.html";
+            } else
+            if (password === "şarkım" || password === "sarkim") {
+                window.location.href = "/pages/sarkim.html";
+            } else
+            if (password === "ilk mesaj" || password === "ilkmesaj") {
+                window.location.href = "/pages/ilkmesaj.html";
+            } else
+            if (password === "aşkım" || password === "askim") {
+                window.location.href = "/pages/asktesti.html";
+            } else {
+                alert("Yanlış şifre aşkım 😔 Lütfen kitaba geri dön ve tekrar dene!");
+            }
+        }
+    </script>
+
+</body>
+</html>
